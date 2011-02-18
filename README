@@ -1,6 +1,5 @@
-I made this one night in #php on OPN (now freenode) because 
-Philip kept looking up peoples' IRC nicks on a Perl 
-script for a lameness score. Many of the people had
-especially lame nicks like _-|Sc0rPi0n|-_. I figured
-why let Perl do all the work when PHP can, so I made 
-the PHP Lame-o-Nickometer. PHP4 required.
+I made this one night in #php on OPN (now freenode) because Philip kept
+looking up peoples' IRC nicks on a Perl script for a lameness score.
+Many of the people had especially lame nicks like _-|Sc0rPi0n|-_. I
+figured why let Perl do all the work when PHP can, so I made the
+PHP Lame-o-Nickometer. PHP5 required.
