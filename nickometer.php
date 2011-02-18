@@ -1,11 +1,11 @@
 <?php
 
 /*
-  this requires PHP 4
-  if you still run PHP 3, quit being lazy and upgrade
+  this requires PHP 5
+  if you still run PHP 4, quit being lazy and upgrade
 */
 
-$VERSION = '1.0';
+$VERSION = '1.1';
 
 function nickometer($nick) {
 	global $score;
@@ -49,15 +49,6 @@ function nickometer($nick) {
 			punish($value, 'matched special case '.$reg[0]);
 	}
 
-  
-	# Allow Perl referencing
-#	s/^\\([A-Za-z])/$1/;
-  
-	# By his own admission, the nick ^Pudge is slightly lame ...
-	# s/\^(pudge)/$1/i;
-
-	# C-- ain't so bad :-)
-#	s/^C--$/C/;
   
 	# Punish consecutive non-alphas
 	preg_match_all("/([^A-Za-z]{2,})/", $nick, $regs);
@@ -228,15 +219,14 @@ function punish ($damage, $reason) {
 
 switch($op) {
 	case "Check nick":
-//		nickometer('P([`PHi1Ip22X)]J');
-		nickometer($HTTP_GET_VARS["nick"]);
+		nickometer($_GET["nick"]);
 		break;
 }
 
 ?>
 
 <html>
-	<form action="<?php echo $HTTP_SERVER_VARS["PHP_SELF"]; ?>" method="get">
+	<form action="<?php echo $_SERVER["PHP_SELF"]; ?>" method="get">
 		<input type="text" name="nick" size="20">
 		<input type="submit" name="op" value="Check nick">
 	</form>
