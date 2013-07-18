@@ -217,7 +217,7 @@ function punish ($damage, $reason) {
 		return;
 }
 
-switch($op) {
+switch($_GET['op']) {
 	case "Check nick":
 		nickometer($_GET["nick"]);
 		break;
